@@ -51,6 +51,7 @@ function TodoList({todoList,setTodoList}){
 
 function Todo({todo,setTodoList}){
 const [inputValue,setInputValue]=useState("");
+const [visible, setVisible]=useState(false);
   return (
     <li key={todo.id}>
       {todo.content}
@@ -63,6 +64,7 @@ const [inputValue,setInputValue]=useState("");
           return (prev.map(el=> 
             el.id === todo.id ? { ...el, content: inputValue}:el
           )
+          
         )})       
       }}>수정</button>
 
